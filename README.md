@@ -1,21 +1,24 @@
 # My Portfolio:
 Welcome to my portfolio! This project showcases my work, skills, and projects.
 
-# Features:
+## Features:
 - Responsive design
 - About me section
 - Projects and skills showcase
 - Contact form
 
-# Technologies Used:
+## Technologies Used:
 - HTML
 - CSS
 - JavaScript
 
-# Credits:
+## Credits:
 This portfolio is built using the "Read Only" template from [HTML5 UP](https://html5up.net).
 
-# Original Template Information
+## Live Demo
+Check out the live demo of my portfolio [here](https://kimkhanghoang.github.io/portfolio/).
+
+## Original Template Information
 Read Only by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
