@@ -2814,7 +2814,7 @@ input, select, textarea {
 					}
 
 						#header > nav ul li a.active {
-							background: #fff;
+							background: linear-gradient(to bottom, #ffffff, #a5ceea);
 							color: #133852 !important;
 							font-weight: bolder;
 						}

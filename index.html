@@ -128,9 +128,10 @@
 				<!-- Footer -->
 					<section id="footer">
 						<div class="container">
-							<ul class="copyright">
-								<li>Copyright &copy; Kim Khang Hoang. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
+								<ul class="copyright">
+										<li>Copyright &copy; <span id="year"></span> Kim Khang Hoang. All rights reserved.</li>
+										<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
 						</div>
 					</section>
 
@@ -144,6 +145,9 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				document.getElementById("year").textContent = new Date().getFullYear();
+			</script>
 
 	</body>
 </html>
