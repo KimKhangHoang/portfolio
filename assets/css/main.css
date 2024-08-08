@@ -2214,7 +2214,7 @@ input, select, textarea {
 			.image.main img {
 				border-radius: 0;
 			}
-	.image:hover {
+	.hover:hover {
 		transform: scale(1.03);
 	}
 /* List */

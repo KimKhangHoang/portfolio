@@ -11,6 +11,7 @@ Welcome to my portfolio! This project showcases my work, skills, and projects.
 - HTML
 - CSS
 - JavaScript
+- Formspree (handles form submissions)
 
 ## Credits:
 This portfolio is built using the "Read Only" template from [HTML5 UP](https://html5up.net).
