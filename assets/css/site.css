@@ -1,7 +1,7 @@
 /* ==========================================================================
    Kim Khang Hoang: personal site
    Plain CSS, no build step. Sections: tokens, base, layout, header, intro,
-   footer. Colours meet WCAG AA contrast in both themes.
+   footer. Emerald on near-black; all text colours meet WCAG AA contrast.
    ========================================================================== */
 
 /* Fonts
@@ -24,18 +24,19 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  --bg: #f7f5f0;
-  --surface: #ffffff;
-  --surface-2: #eeeae1;
-  --border: #e0dbd0;
-  --text: #24243a;
-  --muted: #56566c;
-  --heading: #000055;
-  --link: #000055;
-  --accent: #b93d0b;
-  --mark-disc: #000055;
-  --mark-letters: #ffffff;
-  --shadow: 0 1px 2px rgb(20 20 60 / 0.06), 0 8px 24px rgb(20 20 60 / 0.08);
+  --bg: #0b1210;
+  --surface: #111c18;
+  --surface-2: #18261f;
+  --border: #243730;
+  --text: #d3e2da;
+  --muted: #8fa69a;
+  --heading: #effaf4;
+  --link: #6ee7b7;
+  --accent: #34d399;
+  --mark-disc: #34d399;
+  --mark-letters: #0b1210;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 8px 24px rgb(0 0 0 / 0.35);
+  --shadow-raised: 0 2px 4px rgb(0 0 0 / 0.4), 0 16px 36px rgb(0 0 0 / 0.45);
 
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-heading: "Space Grotesk", var(--font-body);
@@ -45,26 +46,7 @@
   --gutter: clamp(1rem, 4vw, 2rem);
   --measure: 40rem;
 
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e0e22;
-    --surface: #17172f;
-    --surface-2: #20203f;
-    --border: #2c2c4d;
-    --text: #dcdcf0;
-    --muted: #a6a6c4;
-    --heading: #f4f4ff;
-    --link: #c9c9ff;
-    --accent: #ff9466;
-    --mark-disc: #c9c9ff;
-    --mark-letters: #000055;
-    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.3);
-
-    color-scheme: dark;
-  }
+  color-scheme: dark;
 }
 
 /* Base
@@ -397,8 +379,8 @@ ul {
 }
 
 .status--live::before {
-  background: #2f9e44;
-  box-shadow: 0 0 0 3px rgb(47 158 68 / 0.2);
+  background: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
 }
 
 .tags {
@@ -461,7 +443,7 @@ ul {
 
   .project:hover {
     transform: translateY(-3px);
-    box-shadow: 0 2px 4px rgb(20 20 60 / 0.08), 0 16px 36px rgb(20 20 60 / 0.12);
+    box-shadow: var(--shadow-raised);
   }
 }
 
@@ -492,7 +474,7 @@ ul {
   height: 100%;
   padding: 1.5rem;
   border: 1px solid var(--border);
-  border-top: 4px solid var(--heading);
+  border-top: 4px solid var(--accent);
   border-radius: var(--radius);
   background: var(--surface);
 }
