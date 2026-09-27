@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>KKH</title>
+  <defs>
+    <clipPath id="cap-height">
+      <rect x="0" y="21" width="64" height="22" />
+    </clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="32" fill="#34d399" />
+  <g clip-path="url(#cap-height)" fill="none" stroke="#0b1210" stroke-width="4">
+    <path d="M13 19v26M23.2 18.6 13 33M17.3 27l5.3 18" />
+    <path d="M28 19v26M38.2 18.6 28 33M32.3 27l5.3 18" />
+    <path d="M43 19v26M51 19v26M43 32h8" />
+  </g>
+</svg>
