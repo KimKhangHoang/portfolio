@@ -113,9 +113,7 @@ svg {
 
 a {
   color: var(--link);
-  text-decoration-color: var(--accent);
-  text-decoration-thickness: 0.1em;
-  text-underline-offset: 0.2em;
+  text-decoration: none;
 }
 
 a:hover {
@@ -179,7 +177,6 @@ ul {
   color: var(--heading);
   font-family: var(--font-heading);
   font-weight: 700;
-  text-decoration: none;
 }
 
 .monogram {
@@ -465,7 +462,6 @@ button.icon-link {
   background: var(--link);
   color: var(--bg);
   font-weight: 600;
-  text-decoration: none;
 }
 
 .button:hover {
@@ -551,6 +547,14 @@ button.icon-link {
 .mini__link::after {
   content: "→";
   content: "→" / "";
+}
+
+/* Text links carry no underline at rest; hover adds one as feedback. */
+.mini__link:hover,
+.site-footer__link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.25em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
