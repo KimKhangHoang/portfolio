@@ -1,60 +1,45 @@
-# My Portfolio
+# Kim Khang Hoang — personal site
 
-Welcome to my portfolio! This project showcases my work, skills, and projects.
+A single page for the projects and experiments I build in my own time.
 
----
+**Live site:** https://kimkhanghoang.github.io/portfolio/
 
-## Features
+## How it's built
 
-✔️ Responsive design  
-✔️ About me section  
-✔️ Projects and skills showcase  
-✔️ Contact form
+Plain HTML and CSS with no build step, no JavaScript and no dependencies.
 
----
+```text
+index.html                 The whole page
+assets/css/site.css        All styles (light and dark themes)
+assets/fonts/              Space Grotesk heading font (SIL OFL, see OFL.txt)
+assets/icons/              KKH monogram favicon set and web manifest
+images/projects/           Project screenshots (640 px and 1280 px WebP)
+images/og-image.png        Link-preview image (1200 × 630)
+```
 
-## Technologies Used
+## Run it locally
 
-🔹 HTML  
-🔹 CSS  
-🔹 JavaScript  
-🔹 Formspree (handles form submissions)
+Any static file server works. From the repository root:
 
----
+```sh
+python -m http.server 8000
+```
 
-## Live Portfolio
+Then open http://localhost:8000. Opening `index.html` directly also works, apart from the web manifest.
 
-🎨 **Check out my portfolio [here](https://kimkhanghoang.github.io/portfolio/).**
+## Add a project
 
----
+- **With a live demo:** copy one of the `<li>` blocks in the **Featured projects** list in `index.html`. Add two screenshots to `images/projects/`, 1280 × 800 and 640 × 400 WebP, and write alt text that describes what the screenshot shows.
+- **Code only:** copy one of the `<li>` blocks in the **More projects** list. No image is needed.
 
-## Credits
+Keep descriptions to what the project actually does, then update **Last updated** in the footer.
 
-This portfolio is built using the **"Read Only"** template from [HTML5 UP](https://html5up.net).
+## Deployment
 
----
+GitHub Pages serves the `main` branch as is. Pushing to `main` publishes the site.
 
-## Original Template Information
+## Checks before publishing
 
-### **Read Only by HTML5 UP**
-
-🌐 Website: [html5up.net](https://html5up.net) | Twitter: [@ajlkn](https://twitter.com/ajlkn)  
-📝 **License**: Free for personal and commercial use under the CCA 3.0 license ([html5up.net/license](https://html5up.net/license))
-
-> Just a super simple single-page responsive template built for personal sites and portfolios (although it'd work for other stuff too). Includes a contact form, pre-styled elements, and Sass sources.
-
-🔹 **Demo Images**: Courtesy of [Unsplash](https://unsplash.com), a fantastic collection of CC0 (public domain) images. (_Not included in the template_)
-
----
-
-## Additional Resources
-
-### **Credits for Assets Used**
-
-📷 **Demo Images**: [Unsplash](https://unsplash.com)  
-⭐ **Icons**: [Font Awesome](https://fontawesome.io)  
-📌 **Other Libraries**:
-
-- [jQuery](https://jquery.com)
-- [Scrollex](https://github.com/ajlkn/jquery.scrollex)
-- [Responsive Tools](https://github.com/ajlkn/responsive-tools)
+- Resize the browser down to 320 px wide and confirm nothing scrolls sideways.
+- Tab through the page and confirm every link shows a focus outline.
+- Check the page in both light and dark system themes.
