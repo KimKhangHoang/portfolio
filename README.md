@@ -1,4 +1,4 @@
-# Kim Khang Hoang — personal site
+# Kim Khang Hoang's personal site
 
 A single page for the projects and experiments I build in my own time.
 
