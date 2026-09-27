@@ -32,7 +32,7 @@ Then open http://localhost:8000. Opening `index.html` directly also works, apart
 - **With a live demo:** copy one of the `<li>` blocks in the **Featured projects** list in `index.html`. Add two screenshots to `images/projects/`, 1280 × 800 and 640 × 400 WebP, and write alt text that describes what the screenshot shows.
 - **Code only:** copy one of the `<li>` blocks in the **More projects** list. No image is needed.
 
-Keep descriptions to what the project actually does, then update **Last updated** in the footer.
+Keep descriptions to what the project actually does. Update the year in the footer's copyright line when you edit the site in a new year.
 
 ## Deployment
 
