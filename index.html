@@ -74,6 +74,112 @@
           </p>
         </div>
       </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section__head">
+            <h2 id="projects-title">Featured projects</h2>
+            <p>Small web apps you can try in your browser.</p>
+          </div>
+
+          <ul class="featured">
+            <li>
+              <article class="project">
+                <div class="project__preview">
+                  <div class="browser-bar" aria-hidden="true">
+                    <span class="browser-bar__dots"></span>
+                    <span class="browser-bar__url">kimkhanghoang.github.io/weather-wave</span>
+                  </div>
+                  <img
+                    src="images/projects/weatherwave-640.webp"
+                    srcset="
+                      images/projects/weatherwave-640.webp   640w,
+                      images/projects/weatherwave-1280.webp 1280w
+                    "
+                    sizes="(min-width: 60rem) 34rem, 92vw"
+                    width="1280"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                    alt="WeatherWave showing current conditions for Sydney: overcast clouds, 14°C, with humidity, wind and precipitation readings."
+                  />
+                </div>
+                <div class="project__body">
+                  <p class="status status--live">Live demo</p>
+                  <h3>WeatherWave</h3>
+                  <p>
+                    Search for a city and see its current conditions —
+                    temperature, humidity, wind and rainfall — fetched from the
+                    OpenWeatherMap API.
+                  </p>
+                  <ul class="tags" aria-label="Built with">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>OpenWeatherMap API</li>
+                  </ul>
+                  <p class="project__links">
+                    <a class="button" href="https://kimkhanghoang.github.io/weather-wave/"
+                      >Try it<span class="visually-hidden">: WeatherWave</span></a
+                    >
+                    <a class="button button--ghost" href="https://github.com/KimKhangHoang/weather-wave"
+                      >Source<span class="visually-hidden"> code for WeatherWave</span></a
+                    >
+                  </p>
+                </div>
+              </article>
+            </li>
+
+            <li>
+              <article class="project">
+                <div class="project__preview">
+                  <div class="browser-bar" aria-hidden="true">
+                    <span class="browser-bar__dots"></span>
+                    <span class="browser-bar__url">kimkhanghoang.github.io/movie-mania</span>
+                  </div>
+                  <img
+                    src="images/projects/moviemania-640.webp"
+                    srcset="
+                      images/projects/moviemania-640.webp   640w,
+                      images/projects/moviemania-1280.webp 1280w
+                    "
+                    sizes="(min-width: 60rem) 34rem, 92vw"
+                    width="1280"
+                    height="800"
+                    loading="lazy"
+                    decoding="async"
+                    alt="MovieMania's Movies page: a grid of popular film posters with release dates and Add to wish list buttons, below a navigation bar with a search box."
+                  />
+                </div>
+                <div class="project__body">
+                  <p class="status status--live">Live demo</p>
+                  <h3>MovieMania</h3>
+                  <p>
+                    Browse popular films, search by title, open a film for its
+                    details and trailer, and keep a wish list and watched list
+                    as you go. Uses The Movie Database (TMDB) API.
+                  </p>
+                  <ul class="tags" aria-label="Built with">
+                    <li>React</li>
+                    <li>React Router</li>
+                    <li>Bootstrap</li>
+                    <li>Axios</li>
+                    <li>TMDB API</li>
+                  </ul>
+                  <p class="project__links">
+                    <a class="button" href="https://kimkhanghoang.github.io/movie-mania/"
+                      >Try it<span class="visually-hidden">: MovieMania</span></a
+                    >
+                    <a class="button button--ghost" href="https://github.com/KimKhangHoang/movie-mania"
+                      >Source<span class="visually-hidden"> code for MovieMania</span></a
+                    >
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
