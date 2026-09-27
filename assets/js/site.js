@@ -1,3 +1,5 @@
+// Small progressive enhancements. The page works without them.
+
 // Light/dark theme switch. Dark is the default; a chosen theme is remembered.
 (function () {
   var root = document.documentElement;
@@ -29,4 +31,28 @@
 
   render();
   toggle.hidden = false;
+})();
+
+// In-page navigation that keeps # fragments out of the address bar.
+(function () {
+  var main = document.getElementById("main");
+  var skipLink = document.querySelector(".skip-link");
+  var brand = document.querySelector(".brand");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (skipLink && main) {
+    skipLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      main.focus();
+    });
+  }
+
+  if (brand) {
+    brand.addEventListener("click", function (event) {
+      // Let modified clicks (new tab, new window) behave normally.
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: reduceMotion.matches ? "auto" : "smooth" });
+    });
+  }
 })();

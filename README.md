@@ -11,7 +11,7 @@ Plain HTML and CSS with no build step and no dependencies. A small script powers
 ```text
 index.html                 The whole page
 assets/css/site.css        All styles (dark default, light theme)
-assets/js/site.js          Light/dark theme switch
+assets/js/site.js          Theme switch and #-free in-page links
 assets/fonts/              Space Grotesk heading font (SIL OFL, see OFL.txt)
 assets/icons/              KKH monogram favicon set and web manifest
 images/projects/           Project screenshots (640 px and 1280 px WebP)

@@ -132,6 +132,11 @@ ul {
   list-style: none;
 }
 
+/* main is focused by the skip link; the jump itself is the feedback. */
+main:focus {
+  outline: none;
+}
+
 .skip-link {
   position: absolute;
   top: 0.75rem;
