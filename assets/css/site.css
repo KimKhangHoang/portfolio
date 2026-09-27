@@ -33,7 +33,6 @@
   --heading: #000055;
   --link: #000055;
   --accent: #b93d0b;
-  --highlight: #ffd9c7;
   --mark-disc: #000055;
   --mark-letters: #ffffff;
   --shadow: 0 1px 2px rgb(20 20 60 / 0.06), 0 8px 24px rgb(20 20 60 / 0.08);
@@ -60,7 +59,6 @@
     --heading: #f4f4ff;
     --link: #c9c9ff;
     --accent: #ff9466;
-    --highlight: #4a2518;
     --mark-disc: #c9c9ff;
     --mark-letters: #000055;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.3);
@@ -269,37 +267,9 @@ ul {
   line-height: 1.5;
 }
 
-.intro__lead mark {
-  margin-inline: -0.1em;
-  padding-inline: 0.1em;
-  background: linear-gradient(to top, var(--highlight) 45%, transparent 45%);
-  color: inherit;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
 .intro__text {
   max-width: var(--measure);
   margin-top: 1rem;
-}
-
-.intro__now {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  margin-top: 1.75rem;
-  color: var(--muted);
-  font-size: 0.9375rem;
-}
-
-.intro__now::before {
-  content: "";
-  flex: none;
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: var(--accent);
-  transform: translateY(-0.05em);
 }
 
 /* Sections

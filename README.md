@@ -1,6 +1,6 @@
 # Kim Khang Hoang's personal site
 
-A single page for the projects and experiments I build in my own time.
+A single page for the side projects and experiments I build to learn how things work.
 
 **Live site:** https://kimkhanghoang.github.io/portfolio/
 
