@@ -1,0 +1,326 @@
+/* ==========================================================================
+   Kim Khang Hoang — personal site
+   Plain CSS, no build step. Sections: tokens, base, layout, header, intro,
+   footer. Colours meet WCAG AA contrast in both themes.
+   ========================================================================== */
+
+/* Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --surface-2: #eeeae1;
+  --border: #e0dbd0;
+  --text: #24243a;
+  --muted: #56566c;
+  --heading: #000055;
+  --link: #000055;
+  --accent: #b93d0b;
+  --highlight: #ffd9c7;
+  --mark-disc: #000055;
+  --mark-letters: #ffffff;
+  --shadow: 0 1px 2px rgb(20 20 60 / 0.06), 0 8px 24px rgb(20 20 60 / 0.08);
+
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: var(--font-body);
+  --font-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --radius: 0.875rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --measure: 40rem;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e0e22;
+    --surface: #17172f;
+    --surface-2: #20203f;
+    --border: #2c2c4d;
+    --text: #dcdcf0;
+    --muted: #a6a6c4;
+    --heading: #f4f4ff;
+    --link: #c9c9ff;
+    --accent: #ff9466;
+    --highlight: #4a2518;
+    --mark-disc: #c9c9ff;
+    --mark-letters: #000055;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.3);
+
+    color-scheme: dark;
+  }
+}
+
+/* Base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--heading);
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--link);
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+/* Layout
+   -------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Header
+   -------------------------------------------------------------------------- */
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-block: 1.25rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--heading);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.monogram {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+}
+
+.monogram__disc {
+  fill: var(--mark-disc);
+}
+
+.monogram__letters {
+  fill: none;
+  stroke: var(--mark-letters);
+  stroke-width: 4;
+}
+
+/* On narrow screens the name is already the page heading; keep the header on one line. */
+@media (max-width: 30rem) {
+  .brand__name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+}
+
+/* Intro
+   -------------------------------------------------------------------------- */
+
+.intro {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(3rem, 10vw, 6.5rem) clamp(2.5rem, 7vw, 4.5rem);
+}
+
+/* Dotted-paper backdrop that fades out towards the projects. */
+.intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(var(--border) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  background-position: -11px -11px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+
+.intro h1 {
+  max-width: 18ch;
+  font-size: clamp(2.25rem, 6.5vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+.intro__lead {
+  max-width: var(--measure);
+  margin-top: 1.5rem;
+  font-size: clamp(1.1875rem, 2.4vw, 1.375rem);
+  line-height: 1.5;
+}
+
+.intro__lead mark {
+  margin-inline: -0.1em;
+  padding-inline: 0.1em;
+  background: linear-gradient(to top, var(--highlight) 45%, transparent 45%);
+  color: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.intro__text {
+  max-width: var(--measure);
+  margin-top: 1rem;
+}
+
+.intro__now {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.intro__now::before {
+  content: "";
+  flex: none;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-0.05em);
+}
+
+/* Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  margin-top: clamp(3rem, 8vw, 5rem);
+  border-top: 1px solid var(--border);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  padding-block: 2.5rem 3rem;
+}
+
+.site-footer__title {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.footer-links a {
+  display: inline-block;
+  padding-block: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.site-footer__meta {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
