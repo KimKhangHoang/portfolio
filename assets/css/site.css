@@ -1,7 +1,8 @@
 /* ==========================================================================
    Kim Khang Hoang: personal site
    Plain CSS, no build step. Sections: tokens, base, layout, header, intro,
-   footer. Emerald on near-black; all text colours meet WCAG AA contrast.
+   footer. Emerald on near-black by default, with a light theme selected by
+   the theme switch; all text colours meet WCAG AA contrast in both.
    ========================================================================== */
 
 /* Fonts
@@ -47,6 +48,24 @@
   --measure: 40rem;
 
   color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f3f7f4;
+  --surface: #ffffff;
+  --surface-2: #e4ede7;
+  --border: #cfded5;
+  --text: #1b2a23;
+  --muted: #4a5f55;
+  --heading: #0a3325;
+  --link: #047857;
+  --accent: #065f46;
+  --mark-disc: #047857;
+  --mark-letters: #ffffff;
+  --shadow: 0 1px 2px rgb(10 51 37 / 0.06), 0 8px 24px rgb(10 51 37 / 0.08);
+  --shadow-raised: 0 2px 4px rgb(10 51 37 / 0.08), 0 16px 36px rgb(10 51 37 / 0.12);
+
+  color-scheme: light;
 }
 
 /* Base
@@ -191,6 +210,12 @@ ul {
   }
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .header-links {
   display: flex;
   flex-wrap: wrap;
@@ -211,6 +236,22 @@ ul {
 .icon-link:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+button.icon-link {
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Show the theme you would switch to: a sun in dark mode, a moon in light mode. */
+.theme-toggle .icon--moon,
+:root[data-theme="light"] .theme-toggle .icon--sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon--moon {
+  display: block;
 }
 
 .icon {

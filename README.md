@@ -6,11 +6,12 @@ A single page for the side projects and experiments I build to learn how things 
 
 ## How it's built
 
-Plain HTML and CSS with no build step, no JavaScript and no dependencies.
+Plain HTML and CSS with no build step and no dependencies. A small script powers the light/dark switch; without JavaScript the page simply stays dark.
 
 ```text
 index.html                 The whole page
-assets/css/site.css        All styles (light and dark themes)
+assets/css/site.css        All styles (dark default, light theme)
+assets/js/site.js          Light/dark theme switch
 assets/fonts/              Space Grotesk heading font (SIL OFL, see OFL.txt)
 assets/icons/              KKH monogram favicon set and web manifest
 images/projects/           Project screenshots (640 px and 1280 px WebP)
