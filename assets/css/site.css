@@ -223,7 +223,7 @@ main:focus {
   gap: 0.5rem;
 }
 
-.header-links {
+.icon-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -681,6 +681,13 @@ button.icon-link {
 
 .site-footer__meta {
   color: var(--muted);
+}
+
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
 }
 
 .site-footer__link {
