@@ -200,6 +200,11 @@ main:focus {
   stroke-width: 4;
 }
 
+/* Paths use pathLength="1", so a dash of 1 is the whole stroke. */
+.monogram__letters path {
+  stroke-dasharray: 1 1;
+}
+
 /* On narrow screens the name is already the page heading; keep the header on one line. */
 @media (max-width: 30rem) {
   .brand__name {
@@ -218,7 +223,7 @@ main:focus {
   gap: 0.5rem;
 }
 
-.header-links {
+.icon-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -268,7 +273,8 @@ button.icon-link {
 .intro {
   position: relative;
   isolation: isolate;
-  padding-block: clamp(3rem, 10vw, 6.5rem) clamp(2.5rem, 7vw, 4.5rem);
+  /* Kept compact so the featured screenshots show on the first screen. */
+  padding-block: clamp(2rem, 6vw, 4rem) 0;
 }
 
 /* Dotted-paper backdrop that fades out towards the projects. */
@@ -302,6 +308,69 @@ button.icon-link {
   margin-top: 1rem;
 }
 
+/* Intro animation
+   Plays once on load, under a second, and only when the visitor has not
+   asked for reduced motion. The keyframes hold the starting state, so the
+   page shows its final state wherever animation does not run.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .monogram__disc {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: monogram-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .monogram__letters path {
+    animation: monogram-draw 0.6s ease-out 0.15s both;
+  }
+
+  .monogram__letters path:nth-child(2) {
+    animation-delay: 0.27s;
+  }
+
+  .monogram__letters path:nth-child(3) {
+    animation-delay: 0.39s;
+  }
+
+  .intro h1,
+  .intro__lead,
+  .intro__text {
+    animation: intro-rise 0.6s ease-out both;
+  }
+
+  .intro__lead {
+    animation-delay: 0.1s;
+  }
+
+  .intro__text {
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes monogram-pop {
+  from {
+    transform: scale(0.6);
+  }
+}
+
+@keyframes monogram-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+}
+
 /* Sections
    -------------------------------------------------------------------------- */
 
@@ -310,7 +379,7 @@ button.icon-link {
 }
 
 .section__head {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .section__head h2 {
@@ -575,6 +644,14 @@ button.icon-link {
 /* Utilities
    -------------------------------------------------------------------------- */
 
+/* Holds the shared icon <symbol>s referenced with <use>. */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -604,6 +681,13 @@ button.icon-link {
 
 .site-footer__meta {
   color: var(--muted);
+}
+
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
 }
 
 .site-footer__link {
