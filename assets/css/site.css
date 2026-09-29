@@ -200,6 +200,11 @@ main:focus {
   stroke-width: 4;
 }
 
+/* Paths use pathLength="1", so a dash of 1 is the whole stroke. */
+.monogram__letters path {
+  stroke-dasharray: 1 1;
+}
+
 /* On narrow screens the name is already the page heading; keep the header on one line. */
 @media (max-width: 30rem) {
   .brand__name {
@@ -301,6 +306,69 @@ button.icon-link {
 .intro__text {
   max-width: var(--measure);
   margin-top: 1rem;
+}
+
+/* Intro animation
+   Plays once on load, under a second, and only when the visitor has not
+   asked for reduced motion. The keyframes hold the starting state, so the
+   page shows its final state wherever animation does not run.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .monogram__disc {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: monogram-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  .monogram__letters path {
+    animation: monogram-draw 0.6s ease-out 0.15s both;
+  }
+
+  .monogram__letters path:nth-child(2) {
+    animation-delay: 0.27s;
+  }
+
+  .monogram__letters path:nth-child(3) {
+    animation-delay: 0.39s;
+  }
+
+  .intro h1,
+  .intro__lead,
+  .intro__text {
+    animation: intro-rise 0.6s ease-out both;
+  }
+
+  .intro__lead {
+    animation-delay: 0.1s;
+  }
+
+  .intro__text {
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes monogram-pop {
+  from {
+    transform: scale(0.6);
+  }
+}
+
+@keyframes monogram-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
 }
 
 /* Sections
