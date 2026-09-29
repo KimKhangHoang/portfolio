@@ -644,6 +644,14 @@ button.icon-link {
 /* Utilities
    -------------------------------------------------------------------------- */
 
+/* Holds the shared icon <symbol>s referenced with <use>. */
+.sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
