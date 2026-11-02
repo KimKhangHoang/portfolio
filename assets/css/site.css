@@ -301,10 +301,6 @@ button.icon-link {
   line-height: 1.5;
 }
 
-.intro__text {
-  margin-top: 1rem;
-}
-
 /* Intro animation
    Plays once on load, under a second, and only when the visitor has not
    asked for reduced motion. The keyframes hold the starting state, so the
@@ -331,17 +327,12 @@ button.icon-link {
   }
 
   .intro h1,
-  .intro__lead,
-  .intro__text {
+  .intro__lead {
     animation: intro-rise 0.6s ease-out both;
   }
 
   .intro__lead {
     animation-delay: 0.1s;
-  }
-
-  .intro__text {
-    animation-delay: 0.2s;
   }
 }
 
