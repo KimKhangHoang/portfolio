@@ -1,5 +1,7 @@
 # My personal site
 
+[![Visits](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fkimkhanghoang.goatcounter.com%2Fcounter%2FTOTAL.json&query=%24.count&label=visits&color=047857)](https://kimkhanghoang.goatcounter.com)
+
 A single page for the side projects and experiments I build to learn how things work.
 
 **Live site:** https://kimkhanghoang.github.io/portfolio/
