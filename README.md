@@ -1,4 +1,4 @@
-# Kim Khang Hoang's personal site
+# My personal site
 
 A single page for the side projects and experiments I build to learn how things work.
 
