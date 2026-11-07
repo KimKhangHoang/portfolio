@@ -8,6 +8,8 @@ A single page for the side projects and experiments I build to learn how things 
 
 Plain HTML and CSS with no build step and no dependencies. A small script powers the light/dark switch; without JavaScript the page simply stays dark.
 
+Page views are counted with [GoatCounter](https://www.goatcounter.com/), which doesn't store IP addresses or other personal information. Clicks through to projects aren't tracked here, since each project's own stats show visits that came from this site. The full stats are public [here](https://kimkhanghoang.goatcounter.com).
+
 ```text
 index.html                 The whole page
 assets/css/site.css        All styles (dark default, light theme)
