@@ -37,22 +37,11 @@
 (function () {
   var main = document.getElementById("main");
   var skipLink = document.querySelector(".skip-link");
-  var brand = document.querySelector(".brand");
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   if (skipLink && main) {
     skipLink.addEventListener("click", function (event) {
       event.preventDefault();
       main.focus();
-    });
-  }
-
-  if (brand) {
-    brand.addEventListener("click", function (event) {
-      // Let modified clicks (new tab, new window) behave normally.
-      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      window.scrollTo({ top: 0, behavior: reduceMotion.matches ? "auto" : "smooth" });
     });
   }
 })();

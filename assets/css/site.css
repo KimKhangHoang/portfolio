@@ -34,10 +34,11 @@
   --heading: #effaf4;
   --link: #6ee7b7;
   --accent: #34d399;
+  --button-hover: #a7f3d0;
+  --button-ghost-hover: rgb(110 231 183 / 0.18);
   --mark-disc: #34d399;
   --mark-letters: #0b1210;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 8px 24px rgb(0 0 0 / 0.35);
-  --shadow-raised: 0 2px 4px rgb(0 0 0 / 0.4), 0 16px 36px rgb(0 0 0 / 0.45);
 
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-heading: "Space Grotesk", var(--font-body);
@@ -59,10 +60,11 @@
   --heading: #0a3325;
   --link: #047857;
   --accent: #065f46;
+  --button-hover: #064e3b;
+  --button-ghost-hover: rgb(4 120 87 / 0.12);
   --mark-disc: #047857;
   --mark-letters: #ffffff;
   --shadow: 0 1px 2px rgb(10 51 37 / 0.06), 0 8px 24px rgb(10 51 37 / 0.08);
-  --shadow-raised: 0 2px 4px rgb(10 51 37 / 0.08), 0 16px 36px rgb(10 51 37 / 0.12);
 
   color-scheme: light;
 }
@@ -524,11 +526,14 @@ button.icon-link {
   background: var(--link);
   color: var(--bg);
   font-weight: 600;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
+/* Hover moves the filled button to a clearly different shade: lighter in dark mode, darker in light mode.
+   The outlined button gets a tinted fill instead. */
 .button:hover {
-  border-color: var(--accent);
-  background: var(--accent);
+  border-color: var(--button-hover);
+  background: var(--button-hover);
   color: var(--bg);
 }
 
@@ -538,19 +543,9 @@ button.icon-link {
 }
 
 .button--ghost:hover {
-  background: transparent;
-  color: var(--accent);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .project {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .project:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-raised);
-  }
+  border-color: var(--link);
+  background: var(--button-ghost-hover);
+  color: var(--link);
 }
 
 /* More projects (text cards)
@@ -596,43 +591,11 @@ button.icon-link {
   font-size: 0.8125rem;
 }
 
-/* Pinned to the bottom of the card so the links line up across a row. */
-.mini__links {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 1.5rem;
-  margin-top: auto;
-}
-
-.mini__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  min-height: 2.75rem;
-  font-weight: 600;
-}
-
-.mini__link::after {
-  content: "→";
-  content: "→" / "";
-}
-
 /* Text links carry no underline at rest; hover adds one as feedback. */
-.mini__link:hover,
 .site-footer__link:hover {
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.25em;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .mini__link::after {
-    transition: transform 0.2s ease;
-  }
-
-  .mini__link:hover::after {
-    transform: translateX(3px);
-  }
 }
 
 /* Utilities
