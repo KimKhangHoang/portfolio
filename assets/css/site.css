@@ -596,43 +596,11 @@ button.icon-link {
   font-size: 0.8125rem;
 }
 
-/* Pinned to the bottom of the card so the links line up across a row. */
-.mini__links {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 1.5rem;
-  margin-top: auto;
-}
-
-.mini__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  min-height: 2.75rem;
-  font-weight: 600;
-}
-
-.mini__link::after {
-  content: "→";
-  content: "→" / "";
-}
-
 /* Text links carry no underline at rest; hover adds one as feedback. */
-.mini__link:hover,
 .site-footer__link:hover {
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.25em;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .mini__link::after {
-    transition: transform 0.2s ease;
-  }
-
-  .mini__link:hover::after {
-    transform: translateX(3px);
-  }
 }
 
 /* Utilities
