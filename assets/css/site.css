@@ -596,13 +596,19 @@ button.icon-link {
   font-size: 0.8125rem;
 }
 
+/* Pinned to the bottom of the card so the links line up across a row. */
+.mini__links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.5rem;
+  margin-top: auto;
+}
+
 .mini__link {
   display: inline-flex;
   align-items: center;
-  align-self: flex-start;
   gap: 0.35rem;
   min-height: 2.75rem;
-  margin-top: auto;
   font-weight: 600;
 }
 
