@@ -37,7 +37,6 @@
   --mark-disc: #34d399;
   --mark-letters: #0b1210;
   --shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 8px 24px rgb(0 0 0 / 0.35);
-  --shadow-raised: 0 2px 4px rgb(0 0 0 / 0.4), 0 16px 36px rgb(0 0 0 / 0.45);
 
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-heading: "Space Grotesk", var(--font-body);
@@ -62,7 +61,6 @@
   --mark-disc: #047857;
   --mark-letters: #ffffff;
   --shadow: 0 1px 2px rgb(10 51 37 / 0.06), 0 8px 24px rgb(10 51 37 / 0.08);
-  --shadow-raised: 0 2px 4px rgb(10 51 37 / 0.08), 0 16px 36px rgb(10 51 37 / 0.12);
 
   color-scheme: light;
 }
@@ -540,17 +538,6 @@ button.icon-link {
 .button--ghost:hover {
   background: transparent;
   color: var(--accent);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .project {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .project:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-raised);
-  }
 }
 
 /* More projects (text cards)
